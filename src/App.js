@@ -8,11 +8,12 @@ function App() {
   const [text, setText] = useState('')
   const[term, setTerm] = useState('')
   const [loading, setLoading] = useState(false)
-  const [gifs, setGifs] = useState([])
+  const [gifs, setGifs] = useState(null)
 
   async function getGifs(){
     setTerm('')
     setLoading(true)
+    setGifs(null)
     let url = 'https://api.giphy.com/v1/gifs/search?'
     url += 'api_key=' + 'jhQazp87aPuMIRIZoFu2kaI2Uk5GjZRJ'
     url += '&q=' + text
